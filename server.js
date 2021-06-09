@@ -6,9 +6,12 @@ app.engine('hypatia', (filePath, options, callback) => {
   fs.readFile(filePath, (err, content) => {
     if (err) return callback(err)
     const rendered = content.toString()
-      .replace('#title#', '<title>' + options.title + '</title>')
-      .replace('#message#', '<h1>' + options.message + '</h1>')
-      .replace('#content#','<div>'+ options.content + '</div>' )
+      .replace('#author#', '<title>' + options.author + '</title>')
+      .replace('#title#', '<h1>' + options.title + '</h1>')
+      .replace('#lineOne#','<div>'+ options.lineOne + '</div>' )
+      .replace('#lineTwo#','<div>'+ options.lineTwo + '</div>' )
+      .replace('#lineThree#','<div>'+ options.lineThree + '</div>' )
+      .replace('#lineFour#','<div>'+ options.lineFour + '</div>' )
     return callback(null, rendered)
   })
 })
@@ -17,23 +20,23 @@ app.set('view engine', 'hypatia')
 
 //scheming templates
 app.get('/poem-1', (req, res) => {
-  res.render('scheming', { title: 'Ian Johnson', message: 'Code', content: 'My code fails. I do not know why. My code works. I do not know why.' })
+  res.render('scheming', { author: 'Ian Johnson', title: 'Code', lineOne: 'My code fails.', lineTwo: 'I do not know why.', lineThree:'My code works.', lineFour:'I do not know why.' })
 })
 
 app.get('/poem-2', (req, res) => {
-  res.render('scheming', { title: 'Scott Hannen', message: 'Peer Reviewed', content: "It's going to work! Not again, my code has bugs. I don't unit test." })
+  res.render('scheming', { author: 'Scott Hannen', title: 'Peer Reviewed', lineOne: "It's going to work!", lineTwo: "Not again, my code has bugs.", lineThree: "I don't unit test.", lineFour:"" })
 })
 
 app.get('/poem-3', (req, res) => {
-  res.render('scheming', { title: 'Namir', message: 'Work Passion Play', content: 'Make it work, Make it readeble, Make it efficient.' })
+  res.render('scheming', { author: 'Namir', title: 'Work Passion Play', lineOne: "Make it work", lineTwo: "Make it readeble", lineThree: "Make it efficient.", lineFour:"" })
 })
 
 app.get('/poem-4', (req, res) => {
-  res.render('scheming', { title: 'Nancy Deschenes', message: 'If Statement', content: "Code, code, what if? code! Code, what if? code! what if? code. Didn't think of that" })
+  res.render('scheming', { author: 'Nancy Deschenes', title: 'If Statement', lineOne: "Code, code, what if? code! ", lineTwo: "Code, what if? code! what if? code.", lineThree:"Didn't think of that", lineFour:""})
 })
 
 app.get('/poem-5', (req, res) => {
-  res.render('scheming', { title: 'Jason Tighe', message: 'spaghetti', content: "So much sauce on here. Nothing is working, oh no. Where does this begin" })
+  res.render('scheming', { author: 'Jason Tighe', title: 'Spaghetti', lineOne: "So much sauce on here.", lineTwo: "Nothing is working, oh no.", lineThree: "Where does this begin?", lineFour:"" })
 })
 
 

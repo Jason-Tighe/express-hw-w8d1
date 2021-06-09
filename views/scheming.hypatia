@@ -1,7 +1,10 @@
 <head>
-#title#
+#author#
 </head>
 <body>
-<header>#message#</header>
-#content#
+<header>#title#</header>
+#lineOne#
+#lineTwo#
+#lineThree#
+#lineFour#
 </body>

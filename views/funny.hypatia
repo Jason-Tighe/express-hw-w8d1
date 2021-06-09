@@ -3,5 +3,8 @@
 </head>
 <body>
 <header>#message#</header>
-#content#
+#lineOne#
+#lineTwo#
+#lineThree#
+#lineFour#
 </body>
