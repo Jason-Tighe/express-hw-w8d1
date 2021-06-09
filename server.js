@@ -12,6 +12,7 @@ app.engine('hypatia', (filePath, options, callback) => {
       .replace('#lineTwo#','<div>'+ options.lineTwo + '</div>' )
       .replace('#lineThree#','<div>'+ options.lineThree + '</div>' )
       .replace('#lineFour#','<div>'+ options.lineFour + '</div>' )
+      .replace('#image#',`${options.img}`)
     return callback(null, rendered)
   })
 })
@@ -42,23 +43,23 @@ app.get('/poem-5', (req, res) => {
 
 //funny templates
 app.get('/meme-1', (req, res) => {
-  res.render('funny', { title: 'We The Best', message: 'Who!', content: 'We Taking Over, Major Key Alert, Yall know who it is, All I do is win' })
+  res.render('funny', { author: 'FollowerFormat', title: 'Programming Humor:', img: "https://i.redd.it/e9b6md30y2471.png" })
 })
 
 app.get('/meme-2', (req, res) => {
-  res.render('funny', { title: 'We The Best', message: 'Who!', content: 'We Taking Over, Major Key Alert, Yall know who it is, All I do is win' })
+  res.render('funny', { author: 'anakin padme ', title: 'Programming Humor:', img: "https://i.redd.it/p2gp7rm2a2471.png" })
 })
 
 app.get('/meme-3', (req, res) => {
-  res.render('funny', { title: 'We The Best', message: 'Who!', content: 'We Taking Over, Major Key Alert, Yall know who it is, All I do is win' })
+  res.render('funny', { author: 'Tweet', title: 'Programming Humor:', img: 'https://i.redd.it/o33ryb4zfc6z.jpg' })
 })
 
 app.get('/meme-4', (req, res) => {
-  res.render('funny', { title: 'We The Best', message: 'Who!', content: 'We Taking Over, Major Key Alert, Yall know who it is, All I do is win' })
+  res.render('funny', { author: 'MichaelScott', title: 'Programming Humor:', img: 'https://i.redd.it/wudbck9rhuw61.jpg' })
 })
 
 app.get('/meme-5', (req, res) => {
-  res.render('funny', { title: 'We The Best', message: 'Who!', content: 'We Taking Over, Major Key Alert, Yall know who it is, All I do is win' })
+  res.render('funny', { author: 'GrandPa', title: 'Programming Humor:', img: 'https://i.redd.it/e02gucp3mu271.jpg' })
 })
 
 

@@ -1,10 +1,7 @@
 <head>
-#title#
+#author#
 </head>
 <body>
-<header>#message#</header>
-#lineOne#
-#lineTwo#
-#lineThree#
-#lineFour#
+<header>#title#</header>
+<img src="#image#"/>
 </body>
